@@ -1,0 +1,1202 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Bhanu Teja Murarishetty</title>
+<meta name="description" content="Bhanu Teja Murarishetty, a software developer turned AI-enabled software developer, building web, mobile, cloud and AI products.">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="favicon-192x192.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300..700&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap">
+<style>
+/* Layout: one calm reading column (max 1120px) with an editorial grid; quiet sans everywhere, one serif-italic word as the signature. */
+:root {
+  --bg: #F7F5F0;          /* warm off-white */
+  --surface: #FCFBF8;
+  --ink: #1E1F24;         /* charcoal */
+  --ink-2: #575862;
+  --ink-3: #8A8A92;
+  --line: #E3DFD5;
+  --indigo: #4A4E8F;      /* muted indigo */
+  --indigo-soft: #ECEBF4;
+  --teal: #2B7770;        /* subtle teal */
+  --teal-soft: #E2EFEC;
+  --shadow: 0 1px 2px rgba(30, 31, 36, .04), 0 8px 24px -12px rgba(30, 31, 36, .10);
+  --mark-accent: #7CCBC1;  /* teal that reads on the charcoal logo tile */
+
+  --font-sans: "Geist", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "Geist Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  --font-serif: "Instrument Serif", "Iowan Old Style", Georgia, serif;
+
+  --step--1: .8125rem;
+  --step-0: 1rem;
+  --step-1: 1.125rem;
+  --step-2: 1.375rem;
+  --step-3: clamp(1.6rem, 1.2rem + 1.6vw, 2.25rem);
+  --step-4: clamp(2.4rem, 1.4rem + 4.2vw, 4.6rem);
+
+  --wrap: 1120px;
+  --radius: 14px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #141519; --surface: #1A1B20; --ink: #ECEAE4; --ink-2: #A9A8AE; --ink-3: #7C7C84;
+    --line: #2B2C33; --indigo: #A6AAE8; --indigo-soft: #222339; --teal: #74C2B9; --teal-soft: #162D2A; --mark-accent: #2B7770;
+    --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 10px 30px -14px rgba(0, 0, 0, .6);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #141519; --surface: #1A1B20; --ink: #ECEAE4; --ink-2: #A9A8AE; --ink-3: #7C7C84;
+  --line: #2B2C33; --indigo: #A6AAE8; --indigo-soft: #222339; --teal: #74C2B9; --teal-soft: #162D2A; --mark-accent: #2B7770;
+  --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 10px 30px -14px rgba(0, 0, 0, .6);
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; }
+img { max-width: 100%; }
+[hidden] { display: none !important; }
+html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-size: var(--step-0);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+body::before {
+  content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px);
+  z-index: 10; background: var(--bg);
+}
+a { color: inherit; text-decoration: none; }
+:focus-visible { outline: 2px solid var(--indigo); outline-offset: 3px; border-radius: 6px; }
+h1, h2, h3 { text-wrap: balance; margin: 0; font-weight: 500; letter-spacing: -0.02em; }
+p { margin: 0; }
+ul { margin: 0; padding: 0; list-style: none; }
+
+.wrap {
+  max-width: var(--wrap);
+  margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+@media (min-width: 720px) {
+  .wrap { padding-left: max(32px, env(safe-area-inset-left, 0px)); padding-right: max(32px, env(safe-area-inset-right, 0px)); }
+}
+
+.label {
+  font-family: var(--font-mono);
+  font-size: .75rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+.serif { font-family: var(--font-serif); font-style: italic; font-weight: 400; letter-spacing: -0.01em; }
+
+/* ---------- Nav ---------- */
+.nav {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20;
+  background: color-mix(in srgb, var(--bg) 88%, transparent);
+  backdrop-filter: saturate(140%) blur(10px);
+  -webkit-backdrop-filter: saturate(140%) blur(10px);
+  border-bottom: 1px solid transparent;
+  transition: border-color .3s ease;
+}
+.nav.scrolled { border-bottom-color: var(--line); }
+.nav .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-block: 14px; }
+.brand { display: flex; align-items: center; gap: 10px; font-weight: 500; font-size: .95rem; white-space: nowrap; }
+.mark {
+  position: relative; width: 32px; height: 32px; border-radius: 9px; flex: none;
+  display: grid; place-items: center; background: var(--ink);
+  transition: transform .35s cubic-bezier(.2, .7, .2, 1);
+}
+.mark .mono { display: flex; align-items: baseline; line-height: 1; transform: translate(-2px, -0.5px); }
+.mark .b { font-family: var(--font-sans); font-weight: 650; font-size: 17px; letter-spacing: -0.04em; color: var(--bg); }
+.mark .t { font-family: var(--font-serif); font-style: italic; font-size: 22px; color: var(--mark-accent); margin-left: 0.5px; }
+.mark .pip {
+  position: absolute; right: 5px; bottom: 9px; width: 3.5px; height: 3.5px; border-radius: 50%;
+  background: var(--mark-accent); opacity: .9;
+}
+.brand:hover .mark { transform: rotate(-6deg); }
+@media (prefers-reduced-motion: no-preference) {
+  .brand:hover .mark .pip { animation: blink 1s steps(2, start) infinite; }
+  @keyframes blink { to { visibility: hidden; } }
+}
+.wordmark { display: flex; align-items: baseline; gap: 6px; letter-spacing: -0.01em; }
+.wordmark .role { font-family: var(--font-mono); font-size: .72rem; font-weight: 400; color: var(--ink-3); letter-spacing: .02em; }
+@media (max-width: 420px) { .wordmark .role { display: none; } }
+.nav-links { display: flex; gap: 4px; align-items: center; }
+.nav-links a {
+  font-size: .875rem; color: var(--ink-2); padding: 6px 10px; border-radius: 8px;
+  transition: color .2s ease, background .2s ease;
+}
+.nav-links a:hover { color: var(--ink); background: var(--indigo-soft); }
+.nav-links a.cta { color: var(--bg); background: var(--ink); margin-left: 6px; }
+.nav-links a.cta:hover { background: var(--indigo); color: #fff; }
+@media (max-width: 760px) { .nav-links a:not(.cta) { display: none; } }
+
+/* ---------- Hero ---------- */
+.hero { padding-block: clamp(56px, 9vw, 120px) clamp(48px, 7vw, 88px); }
+.hero-grid { display: grid; gap: clamp(40px, 6vw, 72px); grid-template-columns: minmax(0, 1fr); align-items: center; }
+@media (min-width: 960px) { .hero-grid { grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); } }
+.status {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-size: .8125rem; color: var(--ink-2);
+  border: 1px solid var(--line); background: var(--surface);
+  padding: 6px 12px 6px 10px; border-radius: 999px;
+}
+.dot { width: 8px; height: 8px; border-radius: 50%; background: var(--teal); box-shadow: 0 0 0 4px var(--teal-soft); }
+.hero h1 {
+  font-size: var(--step-4); line-height: 1.04; letter-spacing: -0.035em; font-weight: 500;
+  margin-top: 28px; max-width: 15ch;
+}
+.hero h1 .serif { color: var(--teal); font-size: 1.08em; letter-spacing: -0.02em; }
+.hero .lede { margin-top: 28px; font-size: var(--step-1); color: var(--ink-2); max-width: 56ch; line-height: 1.65; }
+.hero .lede strong { color: var(--ink); font-weight: 500; }
+.actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 36px; }
+.btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: .9375rem; font-weight: 500;
+  padding: 11px 18px; border-radius: 10px; border: 1px solid var(--line);
+  transition: transform .2s ease, background .2s ease, border-color .2s ease, color .2s ease;
+}
+.btn.primary { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+.btn.primary:hover { background: var(--indigo); border-color: var(--indigo); color: #fff; }
+.btn.ghost { background: var(--surface); }
+.btn.ghost:hover { border-color: var(--ink-3); }
+.btn:hover { transform: translateY(-1px); }
+.btn svg { width: 16px; height: 16px; }
+
+.now {
+  border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface);
+  box-shadow: var(--shadow); padding: 22px;
+}
+.now h2 { font-size: .75rem; }
+.now ul { display: grid; gap: 16px; margin-top: 16px; }
+.now li { display: grid; grid-template-columns: 76px minmax(0, 1fr); gap: 12px; font-size: .9rem; line-height: 1.5; }
+.now li span:first-child { font-family: var(--font-mono); font-size: .75rem; color: var(--ink-3); padding-top: 2px; }
+.now li span:last-child { color: var(--ink-2); }
+.now li b { color: var(--ink); font-weight: 500; }
+
+/* Hero 3D stack */
+.visual { display: grid; gap: 16px; min-width: 0; }
+.stage { position: relative; width: 100%; max-width: 560px; margin-inline: auto; aspect-ratio: 1 / 0.92; }
+.stage::before {
+  content: ""; position: absolute; left: 14%; right: 14%; bottom: 4%; height: 14%; border-radius: 50%;
+  background: radial-gradient(closest-side, color-mix(in srgb, var(--indigo) 16%, transparent), transparent);
+}
+.stage canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; cursor: grab; touch-action: pan-y; }
+.stage canvas.dragging { cursor: grabbing; }
+.stage-hint { position: absolute; right: 4px; bottom: 0; pointer-events: none; }
+.stage.no3d { display: none; }
+
+/* "Right now" strip under the hero */
+.hero .now { margin-top: clamp(40px, 6vw, 72px); box-shadow: none; }
+@media (min-width: 760px) { .hero .now ul { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; } }
+
+/* Load sequence: content is fully visible at rest; this only eases it in. */
+@media (prefers-reduced-motion: no-preference) {
+  .rise { animation: rise .8s cubic-bezier(.2, .7, .2, 1) both; }
+  .rise.d1 { animation-delay: .06s; } .rise.d2 { animation-delay: .14s; }
+  .rise.d3 { animation-delay: .22s; } .rise.d4 { animation-delay: .32s; }
+  @keyframes rise { from { opacity: .001; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+}
+
+/* ---------- Sections ---------- */
+section.block { padding-block: clamp(64px, 9vw, 112px); border-top: 1px solid var(--line); }
+.head { display: grid; gap: 14px; margin-bottom: clamp(32px, 5vw, 56px); max-width: 62ch; }
+.head h2 { font-size: var(--step-3); line-height: 1.15; letter-spacing: -0.028em; }
+.head p { color: var(--ink-2); font-size: var(--step-1); }
+
+/* ---------- About / journey ---------- */
+.about { display: grid; gap: clamp(40px, 6vw, 80px); grid-template-columns: minmax(0, 1fr); }
+@media (min-width: 900px) { .about { grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); } }
+.about .prose { display: grid; gap: 18px; color: var(--ink-2); font-size: 1.0625rem; max-width: 60ch; }
+.about .prose strong { color: var(--ink); font-weight: 500; }
+.about .pull {
+  font-family: var(--font-serif); font-style: italic; font-size: clamp(1.5rem, 1.2rem + 1vw, 2rem);
+  line-height: 1.25; color: var(--ink); margin-bottom: 6px;
+}
+.timeline { position: relative; display: grid; gap: 0; }
+.timeline::before {
+  content: ""; position: absolute; left: 7px; top: 10px; bottom: 10px; width: 1px;
+  background: linear-gradient(to bottom, var(--line), var(--indigo) 60%, var(--teal));
+}
+.tl { position: relative; display: grid; grid-template-columns: 16px 64px minmax(0, 1fr); gap: 16px; padding-block: 14px; }
+.tl .pin { width: 15px; height: 15px; border-radius: 50%; border: 1px solid var(--line); background: var(--bg); margin-top: 4px; position: relative; z-index: 1; }
+.tl.ai .pin { border-color: var(--teal); background: var(--teal-soft); }
+.tl.ai .pin::after { content: ""; position: absolute; inset: 4px; border-radius: 50%; background: var(--teal); }
+.tl .yr { font-family: var(--font-mono); font-size: .8125rem; color: var(--ink-3); padding-top: 2px; font-variant-numeric: tabular-nums; }
+.tl h3 { font-size: 1rem; font-weight: 500; letter-spacing: -0.01em; }
+.tl p { color: var(--ink-2); font-size: .9375rem; margin-top: 2px; }
+.tl.ai .yr { color: var(--teal); }
+
+/* ---------- Skills ---------- */
+.skills { display: grid; grid-template-columns: minmax(0, 1fr); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; background: var(--surface); }
+@media (min-width: 640px) { .skills { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 980px) { .skills { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.skill { padding: 26px; border-bottom: 1px solid var(--line); display: grid; gap: 12px; align-content: start; }
+@media (min-width: 640px) { .skill { border-right: 1px solid var(--line); } }
+.skill h3 { font-size: 1.0625rem; display: flex; align-items: center; gap: 10px; }
+.skill h3 svg { width: 18px; height: 18px; color: var(--indigo); flex: none; }
+.skill.ai h3 svg { color: var(--teal); }
+.skill p { color: var(--ink-2); font-size: .9375rem; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 4px; }
+.chip {
+  font-family: var(--font-mono); font-size: .72rem; letter-spacing: .01em;
+  padding: 4px 8px; border-radius: 6px; background: var(--bg); border: 1px solid var(--line); color: var(--ink-2);
+}
+.skill.ai .chip { background: var(--teal-soft); border-color: transparent; color: var(--teal); }
+/* Clean outer edges of the grid */
+.skills { margin-bottom: 0; }
+.skills .skill:last-child { border-bottom: 0; }
+@media (min-width: 640px) and (max-width: 979px) {
+  .skill:nth-child(2n) { border-right: 0; }
+  .skill:nth-last-child(-n+2) { border-bottom: 0; }
+}
+@media (min-width: 980px) {
+  .skill:nth-child(3n) { border-right: 0; }
+  .skill:nth-last-child(-n+3) { border-bottom: 0; }
+}
+
+/* ---------- Projects ---------- */
+.projects { display: grid; gap: 20px; grid-template-columns: minmax(0, 1fr); }
+@media (min-width: 860px) { .projects { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.card {
+  border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface);
+  padding: clamp(22px, 3vw, 32px); display: flex; flex-direction: column; gap: 18px;
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+  min-width: 0;
+}
+.card:hover { transform: translateY(-2px); box-shadow: var(--shadow); border-color: color-mix(in srgb, var(--indigo) 30%, var(--line)); }
+.card.wide { grid-column: 1 / -1; }
+@media (min-width: 860px) { .card.wide { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 40px; align-items: start; } }
+.card .meta { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; }
+.card h3 { font-size: var(--step-2); letter-spacing: -0.02em; line-height: 1.25; }
+.card h3 small { display: block; font-size: .9375rem; color: var(--ink-2); font-weight: 400; letter-spacing: 0; margin-top: 6px; }
+.card .desc { color: var(--ink-2); font-size: .9688rem; }
+.card ul.points { display: grid; gap: 8px; font-size: .9375rem; color: var(--ink-2); }
+.card ul.points li { padding-left: 18px; position: relative; }
+.card ul.points li::before { content: ""; position: absolute; left: 2px; top: .72em; width: 6px; height: 1px; background: var(--ink-3); }
+.card .foot { margin-top: auto; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px; }
+.tag-row { display: flex; flex-wrap: wrap; gap: 6px; }
+.link {
+  font-size: .875rem; font-weight: 500; color: var(--indigo);
+  display: inline-flex; align-items: center; gap: 6px;
+  background-image: linear-gradient(currentColor, currentColor); background-size: 0 1px; background-repeat: no-repeat; background-position: 0 100%;
+  transition: background-size .25s ease;
+}
+.link:hover { background-size: 100% 1px; }
+.link svg { width: 14px; height: 14px; }
+.kind { font-family: var(--font-mono); font-size: .72rem; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-3); }
+.kind.ai { color: var(--teal); }
+
+/* System diagrams inside cards (real flows, drawn in HTML) */
+.flow { display: grid; gap: 10px; }
+.flow-row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.node {
+  font-size: .8125rem; padding: 8px 12px; border-radius: 9px; border: 1px solid var(--line); background: var(--bg);
+  color: var(--ink); white-space: nowrap;
+}
+.node.key { border-color: color-mix(in srgb, var(--indigo) 45%, var(--line)); background: var(--indigo-soft); }
+.node.tealish { border-color: color-mix(in srgb, var(--teal) 45%, var(--line)); background: var(--teal-soft); }
+.arrow { color: var(--ink-3); font-size: .9rem; }
+.diagram { border: 1px dashed var(--line); border-radius: 12px; padding: 18px; display: grid; gap: 14px; background: color-mix(in srgb, var(--bg) 60%, var(--surface)); }
+.diagram .cap { font-family: var(--font-mono); font-size: .7rem; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-3); }
+.tiers { display: grid; gap: 10px; }
+.tier { display: grid; grid-template-columns: 92px minmax(0, 1fr); gap: 12px; align-items: center; }
+.tier > span { font-family: var(--font-mono); font-size: .72rem; color: var(--ink-3); }
+.tier .flow-row { gap: 6px; }
+
+/* ---------- Experience ---------- */
+.roles { display: grid; }
+.role {
+  display: grid; gap: 8px 32px; grid-template-columns: minmax(0, 1fr);
+  padding-block: 28px; border-top: 1px solid var(--line);
+}
+.role:last-child { border-bottom: 1px solid var(--line); }
+@media (min-width: 820px) { .role { grid-template-columns: 180px minmax(0, 1fr) minmax(0, 1.25fr); } }
+.role .when { font-family: var(--font-mono); font-size: .8125rem; color: var(--ink-3); font-variant-numeric: tabular-nums; padding-top: 3px; }
+.role .when .live { color: var(--teal); }
+.role h3 { font-size: 1.125rem; letter-spacing: -0.015em; }
+.role .org { color: var(--ink-2); font-size: .9375rem; margin-top: 2px; }
+.role ul { display: grid; gap: 6px; color: var(--ink-2); font-size: .9375rem; }
+.role ul li { padding-left: 18px; position: relative; }
+.role ul li::before { content: ""; position: absolute; left: 2px; top: .72em; width: 6px; height: 1px; background: var(--ink-3); }
+.role .steps { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+
+/* ---------- What I build ---------- */
+.build { display: grid; gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; grid-template-columns: minmax(0, 1fr); }
+@media (min-width: 720px) { .build { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.build > div { background: var(--surface); padding: clamp(24px, 3vw, 36px); display: grid; gap: 10px; align-content: start; }
+.build h3 { font-size: 1.1875rem; letter-spacing: -0.015em; }
+.build p { color: var(--ink-2); font-size: .9688rem; max-width: 52ch; }
+.build .eg { font-size: .8438rem; color: var(--ink-3); }
+.build .eg b { color: var(--ink-2); font-weight: 500; }
+
+/* ---------- Philosophy ---------- */
+.principles { display: grid; gap: clamp(28px, 4vw, 48px) clamp(32px, 5vw, 64px); grid-template-columns: minmax(0, 1fr); }
+@media (min-width: 760px) { .principles { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.principle { display: grid; gap: 10px; }
+.principle h3 { font-family: var(--font-serif); font-style: italic; font-weight: 400; font-size: clamp(1.5rem, 1.2rem + .9vw, 1.9rem); line-height: 1.2; letter-spacing: -0.01em; }
+.principle p { color: var(--ink-2); max-width: 54ch; }
+
+/* ---------- Notes ---------- */
+.notes { display: grid; border-top: 1px solid var(--line); }
+.note { border-bottom: 1px solid var(--line); }
+.note summary {
+  list-style: none; cursor: pointer; display: grid; gap: 6px 24px; padding-block: 24px;
+  grid-template-columns: minmax(0, 1fr) auto; align-items: start;
+}
+.note summary::-webkit-details-marker { display: none; }
+.note summary h3 { font-size: 1.1875rem; letter-spacing: -0.015em; transition: color .2s ease; }
+.note summary:hover h3 { color: var(--indigo); }
+.note summary p { grid-column: 1; color: var(--ink-2); font-size: .9375rem; max-width: 70ch; }
+.note .topic { grid-column: 1; display: flex; gap: 10px; align-items: center; }
+.note .toggle {
+  grid-column: 2; grid-row: 1 / span 3; align-self: center;
+  width: 34px; height: 34px; border-radius: 50%; border: 1px solid var(--line); display: grid; place-items: center;
+  color: var(--ink-2); transition: transform .3s ease, background .2s ease;
+}
+.note[open] .toggle { transform: rotate(45deg); background: var(--indigo-soft); }
+.note .body { padding-bottom: 28px; display: grid; gap: 14px; color: var(--ink-2); max-width: 68ch; font-size: 1rem; }
+.note .body strong { color: var(--ink); font-weight: 500; }
+
+/* ---------- Contact ---------- */
+.contact {
+  display: grid; gap: 40px; grid-template-columns: minmax(0, 1fr);
+  border: 1px solid var(--line); border-radius: calc(var(--radius) + 6px); background: var(--surface);
+  padding: clamp(28px, 5vw, 64px);
+}
+@media (min-width: 900px) { .contact { grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); align-items: end; } }
+.contact h2 { font-size: var(--step-3); letter-spacing: -0.03em; line-height: 1.12; }
+.contact h2 .serif { color: var(--indigo); }
+.contact > div > p { color: var(--ink-2); margin-top: 16px; max-width: 48ch; font-size: var(--step-1); }
+.channels { display: grid; gap: 10px; }
+.channel {
+  display: grid; grid-template-columns: 96px minmax(0, 1fr) auto; gap: 12px; align-items: center;
+  padding: 14px 16px; border: 1px solid var(--line); border-radius: 12px; background: var(--bg);
+}
+.channel .k { font-family: var(--font-mono); font-size: .72rem; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-3); }
+.channel .v { font-size: .9375rem; overflow-wrap: anywhere; user-select: all; }
+.channel a.v { user-select: auto; }
+.copy {
+  font: inherit; font-size: .8125rem; color: var(--ink-2); background: var(--surface);
+  border: 1px solid var(--line); border-radius: 8px; padding: 6px 10px; cursor: pointer;
+  transition: color .2s ease, border-color .2s ease;
+}
+.copy:hover { color: var(--ink); border-color: var(--ink-3); }
+.copy.done { color: var(--teal); border-color: var(--teal); }
+@media (max-width: 480px) { .channel { grid-template-columns: minmax(0, 1fr) auto; } .channel .k { grid-column: 1 / -1; } }
+
+/* ---------- Footer ---------- */
+footer { padding-block: 40px 56px; }
+footer .wrap { display: flex; flex-wrap: wrap; gap: 12px 24px; justify-content: space-between; color: var(--ink-3); font-size: .8438rem; }
+footer a:hover { color: var(--ink); }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition: none !important; animation: none !important; }
+}
+</style>
+</head>
+<body>
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Bhanu Teja Murarishetty, home"><span class="mark" aria-hidden="true"><span class="mono"><span class="b">B</span><span class="t">t</span></span><span class="pip"></span></span><span class="wordmark">Bhanu Teja<span class="role">/ dev + ai</span></span></a>
+    <nav class="nav-links" aria-label="Sections">
+      <a href="#about">About</a>
+      <a href="#work">Work</a>
+      <a href="#experience">Experience</a>
+      <a href="#notes">Notes</a>
+      <a class="cta" href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <!-- Hero -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="status rise"><span class="dot" aria-hidden="true"></span>Software Developer turned AI-Enabled Software Developer</span>
+        <h1 class="rise d1">I build software that <span class="serif">thinks</span>, scales, and solves real problems.</h1>
+        <p class="lede rise d2">I'm <strong>Bhanu Teja Murarishetty</strong>, a full-stack developer from Hyderabad with 6+ years of shipping web apps, mobile apps, APIs and cloud infrastructure. Today I build those same products with AI inside them, and with AI in how I build them.</p>
+        <div class="actions rise d3">
+          <a class="btn primary" href="#work">See selected work
+            <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a class="btn ghost" href="#contact">Get in touch</a>
+        </div>
+      </div>
+      <div class="visual rise d2">
+        <div class="stage" id="stage">
+          <canvas id="hero3d" role="img" aria-label="A 3D laptop showing code from ScaleWise, my AI diet assistant, with tags for React, Node.js, AWS and GCP, and LLMs floating around it"></canvas>
+          <span class="stage-hint label" aria-hidden="true">Drag to rotate · Click to replay</span>
+        </div>
+      </div>
+    </div>
+    <div class="wrap">
+      <aside class="now rise d4" aria-labelledby="now-title">
+        <h2 class="label" id="now-title">Right now</h2>
+        <ul>
+          <li><span>Day job</span><span><b>Backend Developer</b> at HTC Global Services, building IVR APIs for American Family Insurance.</span></li>
+          <li><span>Since 2021</span><span><b>Freelancing</b>: portals, commerce and payment systems for real businesses.</span></li>
+          <li><span>On the side</span><span><b>ScaleWise</b>, an AI diet and fitness assistant on Telegram.</span></li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <!-- About / Journey -->
+  <section class="block" id="about" aria-labelledby="about-title">
+    <div class="wrap">
+      <div class="head">
+        <span class="label">About</span>
+        <h2 id="about-title">From shipping software to shipping software with AI in it.</h2>
+      </div>
+      <div class="about">
+        <div class="prose">
+          <p class="pull">Good engineering came first. AI made it go further.</p>
+          <p>I started on the backend of AR applications, then spent five years at <strong>HONC</strong>, a doorstep car-care startup. I grew from developer to <strong>Tech Lead</strong>, owned the product end to end and led a team of eight across the customer app, the partner app and the admin dashboard.</p>
+          <p>Alongside that, I took on freelance builds for real businesses: a merchandise platform with a storefront for every tribe, a QR payment system for crowded events and a bill-payments site on India's BBPS network.</p>
+          <p>Those projects taught me what AI is good for in practice. I use it to <strong>ship faster</strong> and to <strong>build features that weren't possible before</strong>, like reading a photo of a meal and counting its calories. The fundamentals stay the same: clear APIs, sound data models and systems that hold up in production.</p>
+        </div>
+        <ol class="timeline" aria-label="Career timeline">
+          <li class="tl"><span class="pin" aria-hidden="true"></span><span class="yr">2019</span><div><h3>Backend for AR</h3><p>Node.js and MongoDB APIs for immersive AR apps at XLenz, plus Unity scripting in C#.</p></div></li>
+          <li class="tl"><span class="pin" aria-hidden="true"></span><span class="yr">2020</span><div><h3>Full-stack at HONC</h3><p>Customer app, partner app and admin dashboard for a doorstep car-care platform.</p></div></li>
+          <li class="tl"><span class="pin" aria-hidden="true"></span><span class="yr">2021</span><div><h3>Freelance begins</h3><p>Websites and portals for local businesses, and better Google Business Profiles.</p></div></li>
+          <li class="tl"><span class="pin" aria-hidden="true"></span><span class="yr">2023</span><div><h3>Tech Lead</h3><p>Led 8 developers and owned the HONC product end to end.</p></div></li>
+          <li class="tl ai"><span class="pin" aria-hidden="true"></span><span class="yr">2025</span><div><h3>Enterprise APIs, AI-enabled delivery</h3><p>IVR APIs for a US insurer at HTC Global Services. AI-assisted development across every build.</p></div></li>
+          <li class="tl ai"><span class="pin" aria-hidden="true"></span><span class="yr">Now</span><div><h3>AI inside the product</h3><p>Vision models, LLM assistants and chat-based tools like ScaleWise.</p></div></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section class="block" id="skills" aria-labelledby="skills-title">
+    <div class="wrap">
+      <div class="head">
+        <span class="label">Capabilities</span>
+        <h2 id="skills-title">A full-stack foundation with an AI layer on top.</h2>
+      </div>
+      <div class="skills">
+        <div class="skill">
+          <h3><svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M7 6 3 10l4 4M13 6l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Software Engineering</h3>
+          <p>Web, mobile and API work from first screen to production release.</p>
+          <div class="chips"><span class="chip">TypeScript</span><span class="chip">React</span><span class="chip">React Native</span><span class="chip">Node.js</span><span class="chip">Express</span><span class="chip">MongoDB</span><span class="chip">Redis</span></div>
+        </div>
+        <div class="skill">
+          <h3><svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M6 15h8.5a3.5 3.5 0 0 0 .4-6.98A5 5 0 0 0 5.2 9.1 3 3 0 0 0 6 15Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>Cloud &amp; DevOps</h3>
+          <p>Deploying and running services on both major clouds, with containers and automated pipelines.</p>
+          <div class="chips"><span class="chip">AWS</span><span class="chip">GCP</span><span class="chip">Docker</span><span class="chip">CI/CD</span><span class="chip">AWS SQS</span><span class="chip">Cloudflare</span></div>
+        </div>
+        <div class="skill">
+          <h3><svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><rect x="3" y="3" width="5.5" height="5.5" rx="1.2" stroke="currentColor" stroke-width="1.5"/><rect x="11.5" y="3" width="5.5" height="5.5" rx="1.2" stroke="currentColor" stroke-width="1.5"/><rect x="7.25" y="11.5" width="5.5" height="5.5" rx="1.2" stroke="currentColor" stroke-width="1.5"/><path d="M5.75 8.5v1.5h8.5V8.5M10 10v1.5" stroke="currentColor" stroke-width="1.5"/></svg>Architecture</h3>
+          <p>Multi-tenant platforms, role-based access, payment and wallet flows, queue-backed services.</p>
+          <div class="chips"><span class="chip">REST APIs</span><span class="chip">Multi-tenancy</span><span class="chip">RBAC</span><span class="chip">Payments</span><span class="chip">BBPS</span></div>
+        </div>
+        <div class="skill ai">
+          <h3><svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M10 2.5v3M10 14.5v3M2.5 10h3M14.5 10h3M5 5l2 2M13 13l2 2M15 5l-2 2M7 13l-2 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="10" cy="10" r="2.2" stroke="currentColor" stroke-width="1.5"/></svg>AI &amp; LLMs</h3>
+          <p>Putting language and vision models to work inside real products, with prompts designed and tested like code.</p>
+          <div class="chips"><span class="chip">LLM APIs</span><span class="chip">Vision models</span><span class="chip">Prompt engineering</span><span class="chip">Claude Code</span></div>
+        </div>
+        <div class="skill ai">
+          <h3><svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 5.5h9M4 10h6M4 14.5h5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="14.5" cy="13" r="2.5" stroke="currentColor" stroke-width="1.5"/><path d="m16.3 14.8 1.7 1.7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>RAG</h3>
+          <p>Grounding model answers in a business's own data, so responses are specific and checkable.</p>
+          <div class="chips"><span class="chip">Embeddings</span><span class="chip">Vector search</span><span class="chip">Retrieval</span><span class="chip">Grounded answers</span></div>
+        </div>
+        <div class="skill ai">
+          <h3><svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="5" cy="10" r="2" stroke="currentColor" stroke-width="1.5"/><circle cx="15" cy="5" r="2" stroke="currentColor" stroke-width="1.5"/><circle cx="15" cy="15" r="2" stroke="currentColor" stroke-width="1.5"/><path d="M7 9.2 13 5.8M7 10.8l6 3.4" stroke="currentColor" stroke-width="1.5"/></svg>Agents</h3>
+          <p>Assistants that take actions through tools and APIs, delivered where people already are, like Telegram and WhatsApp.</p>
+          <div class="chips"><span class="chip">Tool use</span><span class="chip">Chat assistants</span><span class="chip">Telegram Bot API</span><span class="chip">WhatsApp API</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section class="block" id="work" aria-labelledby="work-title">
+    <div class="wrap">
+      <div class="head">
+        <span class="label">Selected work</span>
+        <h2 id="work-title">Products built for real businesses and real users.</h2>
+        <p>Freelance builds, personal projects and public-sector apps.</p>
+      </div>
+      <div class="projects">
+
+        <article class="card wide">
+          <div style="display:grid; gap:18px; min-width:0;">
+            <div class="meta"><span class="kind">Commerce platform · Freelance</span></div>
+            <h3>Tribe Merchandise<small>Customer, order, inventory and sales management for a corporate gifting brand</small></h3>
+            <p class="desc">One platform runs the whole business. Admins oversee every tribe. Each tribe gets its own portal and its own branded storefront to sell its merchandise.</p>
+            <ul class="points">
+              <li>Multi-level login with separate admin and tribe portals</li>
+              <li>A dedicated storefront per tribe, with an editor for its design</li>
+              <li>Size-level stock, restock requests, barcodes, order approvals and returns</li>
+              <li>Tribe wallets with settlements, invoices, India Post shipping tools and a WhatsApp inbox</li>
+            </ul>
+            <div class="foot">
+              <div class="tag-row"><span class="chip">React</span><span class="chip">REST APIs</span><span class="chip">RBAC</span><span class="chip">WhatsApp API</span></div>
+              <a class="link" href="https://tribemerchandise.com/" target="_blank" rel="noopener">tribemerchandise.com
+                <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
+            </div>
+          </div>
+          <div class="diagram" aria-label="How access is layered in the platform">
+            <span class="cap">Access layers</span>
+            <div class="tiers">
+              <div class="tier"><span>Admin</span><div class="flow-row"><span class="node key">Catalog</span><span class="node key">All orders</span><span class="node key">Settlements</span></div></div>
+              <div class="tier"><span>Tribe</span><div class="flow-row"><span class="node">Customers</span><span class="node">Orders</span><span class="node">Inventory</span><span class="node">Wallet</span></div></div>
+              <div class="tier"><span>Storefront</span><div class="flow-row"><span class="node tealish">/s/your-tribe</span><span class="arrow" aria-hidden="true">→</span><span class="node tealish">Checkout</span></div></div>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="meta"><span class="kind">Event payments · Web &amp; mobile</span></div>
+          <h3>Tokens by Kairams<small>Cashless payments for events with weak mobile networks</small></h3>
+          <p class="desc">At big events the network gives out, and guests struggle to pay. Here the guest's phone is never needed. Only the stall staff are online, over the venue Wi-Fi.</p>
+          <div class="diagram" aria-label="Payment flow">
+            <span class="cap">Payment flow</span>
+            <div class="flow-row">
+              <span class="node">Buy QR card</span><span class="arrow" aria-hidden="true">→</span>
+              <span class="node">Recharge online</span><span class="arrow" aria-hidden="true">→</span>
+              <span class="node key">Show at stall</span><span class="arrow" aria-hidden="true">→</span>
+              <span class="node tealish">Scan + 6-digit PIN</span>
+            </div>
+          </div>
+          <div class="foot"><div class="tag-row"><span class="chip">QR payments</span><span class="chip">Wallet</span><span class="chip">React Native</span></div></div>
+        </article>
+
+        <article class="card">
+          <div class="meta"><span class="kind ai">AI assistant · Personal</span></div>
+          <h3>ScaleWise<small>An AI diet and fitness assistant on Telegram</small></h3>
+          <p class="desc">Send a photo of a meal and ScaleWise estimates its calories, logs it and shows what's left for the day.</p>
+          <ul class="points">
+            <li>Calorie estimates from food photos using a vision model</li>
+            <li>Recipes built from what's already at home</li>
+            <li>Daily and weekly meal plans with grocery lists</li>
+            <li>Home or gym workouts based on your choice</li>
+          </ul>
+          <div class="foot"><div class="tag-row"><span class="chip">Vision model</span><span class="chip">LLM</span><span class="chip">Telegram Bot API</span></div></div>
+        </article>
+
+        <article class="card">
+          <div class="meta"><span class="kind">Fintech · Web</span></div>
+          <h3>Ekrupay<small>Bill payments on India's BBPS network</small></h3>
+          <p class="desc">A complete bill-payments website covering every BBPS bill category, with several payment gateways and a wallet for top-ups.</p>
+          <div class="foot"><div class="tag-row"><span class="chip">BBPS</span><span class="chip">Payment gateways</span><span class="chip">Wallet</span></div></div>
+        </article>
+
+        <article class="card">
+          <div class="meta"><span class="kind">Social · iOS</span></div>
+          <h3>Doorpe<small>The neighbourhood app</small></h3>
+          <p class="desc">Neighbours post updates and photos, and discover nearby businesses and their offers.</p>
+          <div class="foot">
+            <div class="tag-row"><span class="chip">React Native</span><span class="chip">Node.js</span></div>
+            <a class="link" href="https://apps.apple.com/in/app/door-pe/id6739999459" target="_blank" rel="noopener">App Store
+              <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+        </article>
+
+        <article class="card wide" style="gap:14px;">
+          <div style="display:grid; gap:14px; min-width:0;">
+            <div class="meta"><span class="kind">Public sector · Web</span></div>
+            <h3>COVID-19 Contact Tracing<small>For the Telangana Police Department</small></h3>
+            <p class="desc">Helped officers track and manage potential exposure cases during the pandemic, so they could step in sooner.</p>
+          </div>
+          <div style="display:grid; gap:14px; min-width:0;">
+            <div class="meta"><span class="kind">Public sector · Web</span></div>
+            <h3>Doctor Duty Roster<small>For ESIC Hyderabad</small></h3>
+            <p class="desc">Schedules doctors' shifts across departments, with fewer manual errors and full coverage.</p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience -->
+  <section class="block" id="experience" aria-labelledby="exp-title">
+    <div class="wrap">
+      <div class="head">
+        <span class="label">Experience</span>
+        <h2 id="exp-title">Six years across startups, enterprise clients and my own builds.</h2>
+      </div>
+      <div class="roles">
+        <div class="role">
+          <div class="when"><span class="live">May 2025 – Present</span></div>
+          <div><h3>Backend Developer</h3><p class="org">HTC Global Services · Client: American Family Insurance</p></div>
+          <ul>
+            <li>Build the APIs behind AmFam's IVR phone system for policyholders and the agents who sell its policies.</li>
+            <li>Verify customers by registered mobile number and agents by agent ID.</li>
+            <li>Handle post-sale policy servicing requests through self-service.</li>
+          </ul>
+        </div>
+        <div class="role">
+          <div class="when">May 2023 – May 2025</div>
+          <div><h3>Tech Lead</h3><p class="org">Ravini Technologies (HONC)</p>
+            <div class="steps"><span class="chip">Tech Lead</span><span class="chip">Senior SDE · 2022</span><span class="chip">SDE · 2020</span></div>
+          </div>
+          <ul>
+            <li>Led and mentored 8 developers across frontend and backend.</li>
+            <li>Owned the doorstep car-care platform end to end: customer app, partner app and admin dashboard.</li>
+            <li>Built the partner app's job flows and a React admin dashboard on the way up from SDE.</li>
+            <li>Set up testing practices that made releases more consistent.</li>
+          </ul>
+        </div>
+        <div class="role">
+          <div class="when"><span class="live">2021 – Present</span></div>
+          <div><h3>Freelance Full-Stack Developer</h3><p class="org">Independent</p></div>
+          <ul>
+            <li>Websites, portals, commerce and payment systems for real businesses, built with AI-assisted development.</li>
+            <li>Optimised Google Business Profiles and built websites that bring local businesses more traffic.</li>
+          </ul>
+        </div>
+        <div class="role">
+          <div class="when">Dec 2019 – Aug 2020</div>
+          <div><h3>Software Development Engineer</h3><p class="org">XLenz Inc.</p></div>
+          <ul>
+            <li>Node.js and MongoDB APIs as the backend for immersive AR applications.</li>
+            <li>C# scripting in Unity for interactive AR elements.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What I build -->
+  <section class="block" id="build" aria-labelledby="build-title">
+    <div class="wrap">
+      <div class="head">
+        <span class="label">AI engineering</span>
+        <h2 id="build-title">What I build</h2>
+        <p>Four kinds of work I take on, each backed by something already shipped.</p>
+      </div>
+      <div class="build">
+        <div>
+          <h3>AI features inside products</h3>
+          <p>Vision and language models wired into a product where they save real effort, with a fallback when the model is unsure.</p>
+          <p class="eg"><b>Shipped:</b> calorie estimates from meal photos in ScaleWise.</p>
+        </div>
+        <div>
+          <h3>Assistants where people already are</h3>
+          <p>Chat-based tools on Telegram and WhatsApp that answer questions, plan ahead and act on a user's behalf.</p>
+          <p class="eg"><b>Shipped:</b> ScaleWise on Telegram, the Tribe Merchandise WhatsApp inbox.</p>
+        </div>
+        <div>
+          <h3>Business platforms, delivered fast</h3>
+          <p>Portals, storefronts and back-office tools for small businesses, built end to end with AI-assisted development.</p>
+          <p class="eg"><b>Shipped:</b> Tribe Merchandise, websites for local businesses.</p>
+        </div>
+        <div>
+          <h3>Payments and dependable APIs</h3>
+          <p>Wallets, gateways, QR payments and enterprise APIs where correctness and authentication come first.</p>
+          <p class="eg"><b>Shipped:</b> Tokens by Kairams, Ekrupay, AmFam IVR APIs.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Philosophy -->
+  <section class="block" id="philosophy" aria-labelledby="phil-title">
+    <div class="wrap">
+      <div class="head">
+        <span class="label">Engineering philosophy</span>
+        <h2 id="phil-title">How I work</h2>
+      </div>
+      <div class="principles">
+        <div class="principle">
+          <h3>Start from the person using it.</h3>
+          <p>A guest at a packed event, a caller on a phone line, a tribe owner checking orders. I design around their situation first and pick the technology after.</p>
+        </div>
+        <div class="principle">
+          <h3>AI earns its place.</h3>
+          <p>I add a model where it removes real work or makes something new possible. Everywhere else, plain code is cheaper, faster and easier to trust.</p>
+        </div>
+        <div class="principle">
+          <h3>Own it end to end.</h3>
+          <p>From the data model to the deploy pipeline to the support message on launch day. Owning the whole path is how a product stays coherent.</p>
+        </div>
+        <div class="principle">
+          <h3>Boring where it counts.</h3>
+          <p>Payments, authentication and money movement get proven patterns and careful testing. I save the experiments for places where a mistake is cheap.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Notes -->
+  <section class="block" id="notes" aria-labelledby="notes-title">
+    <div class="wrap">
+      <div class="head">
+        <span class="label">Writing</span>
+        <h2 id="notes-title">Technical notes</h2>
+        <p>Short write-ups on design decisions from projects I've shipped.</p>
+      </div>
+      <div class="notes">
+        <details class="note">
+          <summary>
+            <span class="topic"><span class="kind">Payments</span></span>
+            <h3>Taking payments when the network gives up</h3>
+            <p>Why Tokens by Kairams keeps the guest's phone out of the payment entirely.</p>
+            <span class="toggle" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 2v10M2 7h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+          </summary>
+          <div class="body">
+            <p>At large events, thousands of phones compete for a few cell towers. Any payment that needs the guest's phone online fails at the worst moment, in a queue at a food stall.</p>
+            <p>So the guest carries a <strong>prepaid card with a printed QR code</strong> instead. They recharge it before the event. Only the stall staff need a connection, and they get one over the venue's own Wi-Fi.</p>
+            <p>The QR code only identifies the card. The <strong>6-digit PIN</strong> authorises the debit, the same way an ATM card works. Anyone who photographs a card still can't spend from it.</p>
+          </div>
+        </details>
+        <details class="note">
+          <summary>
+            <span class="topic"><span class="kind">Architecture</span></span>
+            <h3>One platform, many storefronts</h3>
+            <p>Structuring Tribe Merchandise so every tribe sees only its own business.</p>
+            <span class="toggle" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 2v10M2 7h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+          </summary>
+          <div class="body">
+            <p>Each tribe needed its own customers, orders, stock and wallet, plus a public storefront. The admin needed to see everything at once.</p>
+            <p>The answer was <strong>one codebase with tenant-scoped data</strong>. Every request carries the caller's role and tribe, and the API scopes each query by them. Admin routes are a separate surface rather than a flag on the tribe routes.</p>
+            <p>Storefronts follow the same rule from the outside: a public URL per tribe that only ever reads that tribe's catalog.</p>
+          </div>
+        </details>
+        <details class="note">
+          <summary>
+            <span class="topic"><span class="kind ai">AI</span></span>
+            <h3>Counting calories from a photo</h3>
+            <p>What I learned putting a vision model behind a Telegram chat in ScaleWise.</p>
+            <span class="toggle" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 2v10M2 7h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+          </summary>
+          <div class="body">
+            <p>Logging food is where most diet apps lose people. A photo is the lowest-effort input there is, so ScaleWise starts there.</p>
+            <p>The model returns an <strong>estimate, not a fact</strong>. The bot shows what it thinks it saw and the calories it assigned, and the user can correct it in one message. The daily budget always reflects the corrected number.</p>
+            <p>Chat was the right interface. There's no app to install, and the same conversation handles logging, recipes, meal plans and workouts.</p>
+          </div>
+        </details>
+        <details class="note">
+          <summary>
+            <span class="topic"><span class="kind">APIs</span></span>
+            <h3>Designing APIs for a phone call</h3>
+            <p>What changes when the client of your API is an IVR system.</p>
+            <span class="toggle" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 2v10M2 7h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+          </summary>
+          <div class="body">
+            <p>A caller can't see a screen or retry a click. Every pause on the line feels long, so the APIs behind an IVR have to answer quickly and predictably.</p>
+            <p>Identity has to work from what a caller can key in. Customers are recognised by their <strong>registered mobile number</strong> and agents by their <strong>agent ID</strong>, and each gets different self-service options.</p>
+            <p>Responses stay small and unambiguous, because each one becomes a sentence the system speaks out loud.</p>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="block" id="contact" aria-labelledby="contact-title" style="border-top:0; padding-top:0;">
+    <div class="wrap">
+      <div class="contact">
+        <div>
+          <span class="label">Contact</span>
+          <h2 id="contact-title" style="margin-top:14px;">Have a product that should <span class="serif">think</span>? Let's build it.</h2>
+          <p>Open to full-stack and AI engineering roles, and to freelance projects for businesses that want to move faster.</p>
+        </div>
+        <div class="channels">
+          <div class="channel">
+            <span class="k">Email</span>
+            <span class="v" id="email">murarishettybhanuteja@gmail.com</span>
+            <button class="copy" type="button" id="copy-email" data-copy="murarishettybhanuteja@gmail.com">Copy</button>
+          </div>
+          <div class="channel">
+            <span class="k">LinkedIn</span>
+            <a class="v link" href="https://www.linkedin.com/in/murarishetty-bhanuteja-1a04b5141/" target="_blank" rel="noopener">murarishetty-bhanuteja</a>
+            <span></span>
+          </div>
+          <div class="channel">
+            <span class="k">Based in</span>
+            <span class="v">Hyderabad, India</span>
+            <span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Bhanu Teja Murarishetty</span>
+    <span>Software Developer turned AI-Enabled Software Developer · <a href="#top">Back to top ↑</a></span>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+/* Hero: interactive 3D laptop with live code */
+(function () {
+  var stage = document.getElementById('stage');
+  var canvas = document.getElementById('hero3d');
+  if (!stage || !canvas) return;
+  if (!window.THREE) { stage.classList.add('no3d'); return; }
+
+  var renderer;
+  try { renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true, alpha: true }); }
+  catch (e) { stage.classList.add('no3d'); return; }
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var root = document.documentElement;
+  function tok(name) { return getComputedStyle(root).getPropertyValue(name).trim(); }
+
+  var scene = new THREE.Scene();
+  var camera = new THREE.PerspectiveCamera(30, 1, 0.1, 100);
+  camera.position.set(0, 3.1, 8.3);
+  camera.lookAt(0, 0.85, 0);
+
+  scene.add(new THREE.HemisphereLight(0xffffff, 0x9a9ab4, 0.85));
+  var keyLight = new THREE.DirectionalLight(0xffffff, 0.75);
+  keyLight.position.set(3, 6, 5);
+  var rimLight = new THREE.DirectionalLight(0xffffff, 0.3);
+  rimLight.position.set(-4, 3, -4);
+  scene.add(keyLight, rimLight);
+
+  var tilt = new THREE.Group();
+  var spin = new THREE.Group();
+  tilt.add(spin);
+  scene.add(tilt);
+
+  // ---- Geometry helpers ----
+  function roundedRect(w, h, r) {
+    var s = new THREE.Shape(), x = -w / 2, y = -h / 2;
+    s.moveTo(x + r, y);
+    s.lineTo(x + w - r, y); s.quadraticCurveTo(x + w, y, x + w, y + r);
+    s.lineTo(x + w, y + h - r); s.quadraticCurveTo(x + w, y + h, x + w - r, y + h);
+    s.lineTo(x + r, y + h); s.quadraticCurveTo(x, y + h, x, y + h - r);
+    s.lineTo(x, y + r); s.quadraticCurveTo(x, y, x + r, y);
+    return s;
+  }
+  function slab(w, h, thick, r) {
+    var g = new THREE.ExtrudeGeometry(roundedRect(w, h, r), {
+      depth: thick, bevelEnabled: true, bevelThickness: 0.02, bevelSize: 0.02, bevelSegments: 3, curveSegments: 10
+    });
+    g.translate(0, 0, -thick / 2);
+    return g;
+  }
+
+  // ---- Laptop ----
+  var W = 3.2, D = 2.2, BT = 0.1, LT = 0.06, LH = 2.05;
+  var bodyMat = new THREE.MeshStandardMaterial({ roughness: 0.45, metalness: 0.3 });
+  var deckMat = new THREE.MeshStandardMaterial({ roughness: 0.75, metalness: 0.05 });
+  var keyMat = new THREE.MeshStandardMaterial({ roughness: 0.8, metalness: 0 });
+  var bezelMat = new THREE.MeshStandardMaterial({ color: 0x101116, roughness: 0.35, metalness: 0.1 });
+
+  var laptop = new THREE.Group();
+  laptop.position.z = 0.2;
+  spin.add(laptop);
+
+  var base = new THREE.Mesh(slab(W, D, BT, 0.14), bodyMat);
+  base.rotation.x = -Math.PI / 2;
+  base.position.y = BT / 2;
+  laptop.add(base);
+  var top = BT + 0.021;
+
+  var deck = new THREE.Mesh(new THREE.PlaneGeometry(2.86, 1.08), deckMat);
+  deck.rotation.x = -Math.PI / 2;
+  deck.position.set(0, top, -0.3);
+  laptop.add(deck);
+
+  var cols = 14, rows = 5, pitch = 0.196;
+  var keys = new THREE.InstancedMesh(new THREE.BoxGeometry(0.165, 0.03, 0.165), keyMat, cols * rows);
+  var m4 = new THREE.Matrix4(), n = 0;
+  for (var r = 0; r < rows; r++) {
+    for (var c = 0; c < cols; c++) {
+      m4.makeTranslation((c - (cols - 1) / 2) * pitch, top + 0.016, -0.3 + (r - (rows - 1) / 2) * pitch);
+      keys.setMatrixAt(n++, m4);
+    }
+  }
+  laptop.add(keys);
+
+  var pad = new THREE.Mesh(new THREE.PlaneGeometry(1.05, 0.56), deckMat);
+  pad.rotation.x = -Math.PI / 2;
+  pad.position.set(0, top + 0.001, 0.63);
+  laptop.add(pad);
+
+  var hinge = new THREE.Group();
+  hinge.position.set(0, top, -D / 2 + 0.05);
+  laptop.add(hinge);
+
+  var lid = new THREE.Mesh(slab(W, LH, LT, 0.14), bodyMat);
+  lid.position.set(0, LH / 2, -LT / 2);
+  hinge.add(lid);
+
+  var bezel = new THREE.Mesh(new THREE.PlaneGeometry(W - 0.04, LH - 0.04), bezelMat);
+  bezel.position.set(0, LH / 2, 0.022);
+  hinge.add(bezel);
+
+  // ---- Screen: a code editor drawn on a canvas ----
+  var sc = document.createElement('canvas');
+  sc.width = 1024; sc.height = 640;
+  var cx = sc.getContext('2d');
+  var screenTex = new THREE.CanvasTexture(sc);
+  screenTex.anisotropy = renderer.capabilities.getMaxAnisotropy();
+  var screen = new THREE.Mesh(new THREE.PlaneGeometry(W - 0.24, (W - 0.24) * 0.625),
+                              new THREE.MeshBasicMaterial({ map: screenTex }));
+  screen.position.set(0, LH / 2 + 0.03, 0.024);
+  hinge.add(screen);
+
+  var C = { kw: '#A6AAE8', str: '#74C2B9', fn: '#EBD9B4', cm: '#6C6E7A', pl: '#D9D7D0' };
+  var code = [
+    [['cm', '// ScaleWise · log a meal from a photo']],
+    [['kw', 'bot'], ['pl', '.'], ['fn', 'on'], ['pl', '('], ['str', '"photo"'], ['pl', ', '], ['kw', 'async'], ['pl', ' (ctx) => {']],
+    [['pl', '  '], ['kw', 'const'], ['pl', ' image = '], ['kw', 'await'], ['pl', ' ctx.'], ['fn', 'getPhoto'], ['pl', '();']],
+    [['pl', '  '], ['kw', 'const'], ['pl', ' meal = '], ['kw', 'await'], ['pl', ' vision.'], ['fn', 'estimate'], ['pl', '(image);']],
+    [],
+    [['pl', '  '], ['kw', 'await'], ['pl', ' diary.'], ['fn', 'log'], ['pl', '(ctx.user, meal);']],
+    [['pl', '  '], ['kw', 'const'], ['pl', ' left = '], ['kw', 'await'], ['pl', ' budget.'], ['fn', 'remaining'], ['pl', '(ctx.user);']],
+    [],
+    [['pl', '  '], ['kw', 'return'], ['pl', ' ctx.'], ['fn', 'reply'], ['pl', '(']],
+    [['pl', '    '], ['str', '`${meal.name} · ${meal.kcal} kcal, ${left} left`']],
+    [['pl', '  );']],
+    [['pl', '});']]
+  ];
+  var totalChars = code.reduce(function (sum, line) {
+    return sum + line.reduce(function (s, t) { return s + t[1].length; }, 0) + 1;
+  }, 0);
+
+  var MONO = '"Geist Mono", ui-monospace, Menlo, monospace';
+  var typed = reduce ? totalChars : 0, caretOn = true, lastDrawn = '';
+
+  function drawScreen() {
+    var key = typed + '|' + caretOn;
+    if (key === lastDrawn) return;
+    lastDrawn = key;
+
+    cx.fillStyle = '#1B1C22'; cx.fillRect(0, 0, 1024, 640);
+    // title bar
+    cx.fillStyle = '#15161B'; cx.fillRect(0, 0, 1024, 56);
+    ['#3A3B45', '#3A3B45', '#3A3B45'].forEach(function (col, i) {
+      cx.fillStyle = col; cx.beginPath(); cx.arc(30 + i * 24, 28, 7, 0, Math.PI * 2); cx.fill();
+    });
+    cx.fillStyle = '#1B1C22'; cx.fillRect(120, 12, 190, 44);
+    cx.fillStyle = '#74C2B9'; cx.beginPath(); cx.arc(142, 34, 5, 0, Math.PI * 2); cx.fill();
+    cx.font = '500 21px ' + MONO; cx.fillStyle = '#C9C7C0'; cx.textBaseline = 'middle';
+    cx.fillText('bot.ts', 158, 35);
+    cx.fillStyle = '#5E606B'; cx.fillText('scalewise / src', 336, 35);
+
+    // code
+    var left = 22, gutter = 66, y0 = 94, lh = 41, remaining = typed, caret = null;
+    cx.font = '27px ' + MONO;
+    for (var i = 0; i < code.length; i++) {
+      var y = y0 + i * lh;
+      cx.fillStyle = '#4A4C57'; cx.textAlign = 'right';
+      cx.fillText(String(i + 1), left + 30, y);
+      cx.textAlign = 'left';
+      if (remaining <= 0) continue;
+      var x = left + gutter;
+      for (var t = 0; t < code[i].length && remaining > 0; t++) {
+        var text = code[i][t][1].slice(0, remaining);
+        remaining -= text.length;
+        cx.fillStyle = C[code[i][t][0]];
+        cx.fillText(text, x, y);
+        x += cx.measureText(text).width;
+      }
+      remaining -= 1; // newline
+      caret = { x: x, y: y, line: i };
+    }
+    if (caret) {
+      cx.fillStyle = 'rgba(166, 170, 232, 0.07)';
+      cx.fillRect(0, caret.y - lh / 2, 1024, lh);
+      if (caretOn) { cx.fillStyle = '#74C2B9'; cx.fillRect(caret.x + 2, caret.y - 16, 3, 32); }
+    }
+
+    // status bar
+    cx.fillStyle = '#15161B'; cx.fillRect(0, 604, 1024, 36);
+    cx.font = '18px ' + MONO; cx.fillStyle = '#6C6E7A';
+    cx.fillText('TypeScript · Telegram Bot API', 24, 623);
+    if (typed >= totalChars) {
+      cx.fillStyle = '#74C2B9'; cx.textAlign = 'right';
+      cx.fillText('✓ deployed', 1000, 623);
+      cx.textAlign = 'left';
+    }
+    screenTex.needsUpdate = true;
+  }
+  drawScreen();
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { lastDrawn = ''; drawScreen(); });
+
+  // ---- Floating skill tags (always face the camera) ----
+  var tags = [
+    { text: 'React', pos: [-1.9, 2.3, 0.4], ai: false },
+    { text: 'Node.js', pos: [1.8, 2.55, -0.6], ai: false },
+    { text: 'AWS · GCP', pos: [1.85, 0.55, 1.0], ai: false },
+    { text: 'LLMs', pos: [-1.95, 0.8, -0.3], ai: true }
+  ];
+  tags.forEach(function (t, i) {
+    t.canvas = document.createElement('canvas');
+    t.canvas.width = 512; t.canvas.height = 128;
+    t.tex = new THREE.CanvasTexture(t.canvas);
+    t.sprite = new THREE.Sprite(new THREE.SpriteMaterial({ map: t.tex, transparent: true }));
+    t.sprite.scale.set(1.12, 0.28, 1);
+    t.sprite.position.set(t.pos[0], t.pos[1], t.pos[2]);
+    t.phase = i * 1.7;
+    spin.add(t.sprite);
+  });
+  function drawTag(t) {
+    var g = t.canvas.getContext('2d');
+    g.clearRect(0, 0, 512, 128);
+    g.font = '500 44px "Geist", ui-sans-serif, system-ui, sans-serif';
+    var w = Math.min(500, g.measureText(t.text).width + 110), x = (512 - w) / 2;
+    g.beginPath();
+    if (g.roundRect) g.roundRect(x, 20, w, 88, 44); else g.rect(x, 20, w, 88);
+    g.fillStyle = tok('--surface'); g.fill();
+    g.lineWidth = 3; g.strokeStyle = tok('--line'); g.stroke();
+    g.fillStyle = t.ai ? tok('--teal') : tok('--indigo');
+    g.fillRect(x + 36, 56, 16, 16);
+    g.fillStyle = tok('--ink'); g.textBaseline = 'middle';
+    g.fillText(t.text, x + 70, 66);
+    t.tex.needsUpdate = true;
+  }
+
+  function applyColors() {
+    var surface = new THREE.Color(tok('--surface')), ink = new THREE.Color(tok('--ink'));
+    bodyMat.color.copy(surface).lerp(ink, 0.16);
+    deckMat.color.copy(surface).lerp(ink, 0.26);
+    keyMat.color.copy(surface).lerp(ink, 0.36);
+    tags.forEach(drawTag);
+  }
+  applyColors();
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { tags.forEach(drawTag); });
+  var mq = window.matchMedia('(prefers-color-scheme: dark)');
+  if (mq.addEventListener) mq.addEventListener('change', applyColors);
+  new MutationObserver(applyColors).observe(root, { attributes: true, attributeFilter: ['data-theme'] });
+
+  // ---- Sizing ----
+  function resize() {
+    var w = stage.clientWidth, h = stage.clientHeight;
+    if (!w || !h) return;
+    renderer.setSize(w, h, false);
+    camera.aspect = w / h;
+    camera.updateProjectionMatrix();
+  }
+  if (window.ResizeObserver) new ResizeObserver(resize).observe(stage);
+  window.addEventListener('resize', resize);
+  resize();
+
+  // ---- Interaction ----
+  var REST = -0.42;
+  var rotY = REST, targetRotY = REST, tiltX = 0, targetTilt = 0;
+  var dragging = false, moved = 0, lastX = 0, lastInteract = -1e9;
+  canvas.addEventListener('pointerdown', function (e) {
+    dragging = true; moved = 0; lastX = e.clientX;
+    canvas.classList.add('dragging');
+    try { canvas.setPointerCapture(e.pointerId); } catch (err) {}
+  });
+  canvas.addEventListener('pointermove', function (e) {
+    var rect = canvas.getBoundingClientRect();
+    targetTilt = (((e.clientY - rect.top) / rect.height) - 0.5) * 0.18;
+    if (!dragging) return;
+    var dx = e.clientX - lastX;
+    moved += Math.abs(dx);
+    targetRotY += dx * 0.01;
+    lastX = e.clientX;
+    lastInteract = performance.now();
+  });
+  function endDrag() {
+    if (dragging && moved < 4 && !reduce) { typed = 0; lastDrawn = ''; }  // click replays the code
+    dragging = false;
+    canvas.classList.remove('dragging');
+    lastInteract = performance.now();
+  }
+  canvas.addEventListener('pointerup', endDrag);
+  canvas.addEventListener('pointercancel', function () { dragging = false; canvas.classList.remove('dragging'); });
+  canvas.addEventListener('pointerleave', function () { targetTilt = 0; });
+
+  var visible = true;
+  if (window.IntersectionObserver) {
+    new IntersectionObserver(function (entries) { visible = entries[0].isIntersecting; }).observe(stage);
+  }
+
+  // ---- Loop ----
+  var CLOSED = Math.PI / 2 - 0.05, OPEN = -0.26;
+  var start = null, lastCaret = 0;
+  function ease(x) { return 1 - Math.pow(1 - x, 3); }
+  hinge.rotation.x = reduce ? OPEN : CLOSED;
+
+  function frame(now) {
+    requestAnimationFrame(frame);
+    if (!visible) return;
+    if (start === null) start = now;
+    var t = now - start;
+
+    // lid opens once on load, then the code types in
+    if (!reduce) {
+      var p = Math.min(1, Math.max(0, (t - 300) / 1400));
+      hinge.rotation.x = CLOSED + (OPEN - CLOSED) * ease(p);
+      if (p >= 1 && typed < totalChars) typed = Math.min(totalChars, typed + 1.1);
+      if (now - lastCaret > 520) { caretOn = !caretOn; lastCaret = now; }
+    }
+    typedInt();
+
+    // idle sway; dragging takes over, then it drifts back
+    if (!dragging && !reduce && now - lastInteract > 2500) {
+      targetRotY += ((REST + Math.sin(now / 3800) * 0.32) - targetRotY) * 0.02;
+    }
+    rotY += (targetRotY - rotY) * 0.08;
+    spin.rotation.y = rotY;
+    tiltX += (targetTilt - tiltX) * 0.06;
+    tilt.rotation.x = tiltX;
+
+    tags.forEach(function (tg) {
+      tg.sprite.position.y = tg.pos[1] + (reduce ? 0 : Math.sin(now / 1400 + tg.phase) * 0.08);
+    });
+
+    renderer.render(scene, camera);
+  }
+  function typedInt() {
+    var whole = Math.floor(typed);
+    var saved = typed; typed = whole; drawScreen(); typed = saved;
+  }
+  requestAnimationFrame(frame);
+})();
+</script>
+<script>
+(function () {
+  var nav = document.getElementById('nav');
+  function onScroll() { nav.classList.toggle('scrolled', window.scrollY > 8); }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  document.querySelectorAll('.copy').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var text = btn.getAttribute('data-copy');
+      function done() {
+        btn.textContent = 'Copied';
+        btn.classList.add('done');
+        setTimeout(function () { btn.textContent = 'Copy'; btn.classList.remove('done'); }, 1800);
+      }
+      function fallback() {
+        var el = document.getElementById('email');
+        var range = document.createRange();
+        range.selectNodeContents(el);
+        var sel = window.getSelection();
+        sel.removeAllRanges();
+        sel.addRange(range);
+        btn.textContent = 'Selected';
+      }
+      try {
+        navigator.clipboard.writeText(text).then(done, fallback);
+      } catch (e) { fallback(); }
+    });
+  });
+})();
+</script>
+</body>
+</html>
